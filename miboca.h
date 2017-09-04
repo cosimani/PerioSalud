@@ -15,6 +15,8 @@ public:
     explicit Miboca(QWidget *parent = 0);
     ~Miboca();
 
+protected:
+    void showEvent(QShowEvent *);
 private:
     Ui::Miboca *ui;
 };

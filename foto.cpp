@@ -6,7 +6,8 @@
 
 Foto::Foto(QWidget *parent) : QWidget(parent),
                               ui(new Ui::Foto),
-                              manager( new QNetworkAccessManager( this ) )
+                              manager( new QNetworkAccessManager( this ) ),
+                              tipoFoto( NINGUNA )
 {
     ui->setupUi(this);
 
@@ -41,11 +42,6 @@ void Foto::setColor(QString color)
     this->repaint();
 }
 
-void Foto::setFile(QString file)
-{
-    foto.load( file );
-    this->repaint();
-}
 
 /**
  * @brief Foto::descargarFotoDentista Descarga la foto de perfil del dentista que tiene este usuario
@@ -54,9 +50,22 @@ void Foto::setFile(QString file)
  */
 void Foto::descargarFotoDentista(QString usuario, QString clave)
 {
+    tipoFoto = API_VAYRA;
+
     // Para que no descargue nuevamente la foto si ya se descargo antes
     if ( foto.isNull() )
         DataManager::getInstance()->requestFotoDentista( usuario, clave );
+}
+
+void Foto::dibujarFotoDeDisco(QString recurso)
+{
+    tipoFoto = DISCO;
+
+    ui->lNombreCompleto->clear();
+    ui->lMail->clear();
+
+    foto.load( recurso );
+    this->repaint();
 }
 
 void Foto::paintEvent(QPaintEvent *)
@@ -78,11 +87,13 @@ void Foto::slot_descargarFoto(QNetworkReply *reply)
 
 void Foto::slot_dibujarFotoPerfil( QString nombre, QString apellido, QString mail, QString url_foto )
 {
-    // le pongo el .simplified() porque aparece un \n en la url que complica la descarga
-    manager->get( QNetworkRequest( QUrl( url_foto.simplified() ) ) );
+    if ( tipoFoto == API_VAYRA )  {
+        // le pongo el .simplified() porque aparece un \n en la url que complica la descarga
+        manager->get( QNetworkRequest( QUrl( url_foto.simplified() ) ) );
 
-    Comun::getInstance()->setNombreApellidoDentista( nombre, apellido, mail );
+        Comun::getInstance()->setNombreApellidoDentista( nombre, apellido, mail );
 
-    ui->lNombreCompleto->setText( nombre + " " + apellido );
-    ui->lMail->setText( mail );
+        ui->lNombreCompleto->setText( nombre + " " + apellido );
+        ui->lMail->setText( mail );
+    }
 }

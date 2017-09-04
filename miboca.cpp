@@ -22,9 +22,18 @@ Miboca::Miboca(QWidget *parent) :
                             Comun::getInstance()->getNombre() + " " +
                             Comun::getInstance()->getApellido() + "  " );
 
+
 }
 
 Miboca::~Miboca()
 {
     delete ui;
 }
+
+void Miboca::showEvent(QShowEvent *)
+{
+    ui->fotoBoca1->dibujarFotoDeDisco( ":/resources/images/didi1.png" );
+    ui->fotoBoca2->dibujarFotoDeDisco( ":/resources/images/didi2.png" );
+    ui->fotoBoca3->dibujarFotoDeDisco( ":/resources/images/didi3.png" );
+}
+

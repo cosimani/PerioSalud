@@ -32,6 +32,16 @@
    <item row="0" column="0">
     <widget class="Image" name="background" native="true">
      <layout class="QGridLayout" name="gridLayout_2">
+      <item row="11" column="0" colspan="3">
+       <widget class="QLabel" name="lPaciente">
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
       <item row="6" column="0" colspan="3">
        <spacer name="verticalSpacer_4">
         <property name="orientation">
@@ -45,7 +55,7 @@
         </property>
        </spacer>
       </item>
-      <item row="10" column="0" colspan="3">
+      <item row="9" column="0" colspan="3">
        <spacer name="verticalSpacer_6">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -81,7 +91,7 @@
         </property>
        </widget>
       </item>
-      <item row="11" column="0" colspan="3">
+      <item row="10" column="0" colspan="3">
        <spacer name="verticalSpacer_5">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -106,16 +116,6 @@
          </size>
         </property>
        </spacer>
-      </item>
-      <item row="9" column="0" colspan="3">
-       <widget class="Boton" name="b3" native="true">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-       </widget>
       </item>
       <item row="2" column="0" colspan="2">
        <spacer name="verticalSpacer_2">
@@ -144,7 +144,7 @@
        </spacer>
       </item>
       <item row="7" column="0" colspan="3">
-       <widget class="Boton" name="b1" native="true">
+       <widget class="Boton" name="pbVisitas" native="true">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>

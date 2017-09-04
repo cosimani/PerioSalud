@@ -18,5 +18,8 @@
         <file>resources/images/background3.jpg</file>
         <file>resources/images/links.png</file>
         <file>resources/images/links2.png</file>
+        <file>resources/images/didi1.png</file>
+        <file>resources/images/didi2.png</file>
+        <file>resources/images/didi3.png</file>
     </qresource>
 </RCC>

@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+class Visitas;
+
 namespace Ui {
 class MiDentista;
 }
@@ -15,8 +17,15 @@ public:
     explicit MiDentista(QWidget *parent = 0);
     ~MiDentista();
 
+
 private:
     Ui::MiDentista *ui;
+
+    Visitas * visitas;
+
+private slots:
+    void showVisitas();
+
 };
 
 #endif // MIDENTISTA_H

@@ -17,6 +17,13 @@ public:
 
 private:
     Ui::Visitas *ui;
+
+private slots:
+    void slot_clicked(const QDate &date);
+    void slot_reservarTurno();
+
+protected:
+    void showEvent(QShowEvent *);
 };
 
 #endif // VISITAS_H

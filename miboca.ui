@@ -32,7 +32,7 @@
    <item row="0" column="0">
     <widget class="Image" name="background" native="true">
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="1" column="0">
+      <item row="4" column="0">
        <widget class="QLabel" name="lPaciente">
         <property name="text">
          <string>Paciente</string>
@@ -42,7 +42,17 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="0">
+      <item row="1" column="0">
+       <widget class="Foto" name="fotoBoca2" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
        <spacer name="verticalSpacer">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -55,6 +65,26 @@
         </property>
        </spacer>
       </item>
+      <item row="0" column="0">
+       <widget class="Foto" name="fotoBoca1" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="Foto" name="fotoBoca3" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>
@@ -65,6 +95,12 @@
    <class>Image</class>
    <extends>QWidget</extends>
    <header>image.hpp</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Foto</class>
+   <extends>QWidget</extends>
+   <header>foto.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

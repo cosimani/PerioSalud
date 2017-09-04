@@ -21,10 +21,12 @@ public:
     explicit Foto(QWidget *parent = 0);
     ~Foto();
 
+    enum TipoFoto  { DISCO, URL, API_VAYRA, NINGUNA };
+
     void setTexto( QString texto );
     void setColor( QString color );
-    void setFile( QString file );
     void descargarFotoDentista( QString usuario, QString clave );
+    void dibujarFotoDeDisco( QString recurso );
 
 protected:
     void paintEvent(QPaintEvent *);
@@ -36,6 +38,8 @@ private:
 
     QImage foto;
     QNetworkAccessManager * manager;
+
+    TipoFoto tipoFoto;
 
 private slots:
     void slot_descargarFoto( QNetworkReply * reply );
